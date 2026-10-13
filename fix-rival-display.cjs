@@ -1,0 +1,1 @@
+const fs=require('fs');let s=fs.readFileSync('dist/game.js','utf8');s=s.replace("e.hp+' / 6 HEALTH · 2 ATTACK DAMAGE","roundStat(e.hp)+' / '+(e.maxHp??6)+' HEALTH · '+(e.damage??2)+' ATTACK DAMAGE · TIER '+(e.tier??0)+'");fs.writeFileSync('dist/game.js',s);
