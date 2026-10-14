@@ -27,3 +27,5 @@ body.aiming #map,body.aiming .district{cursor:url("data:image/svg+xml,%3Csvg xml
 .district.burning .land{fill:#963d32;stroke:#ff8b63;stroke-width:2.5}.district.burning:hover .land,.district.burning:focus .land{fill:#b84b3c}.district.burning.active .land{fill:#a84032;stroke:#f2df82}.district.burning .fire-badge{fill:#ffe0bd}.district.rubble .land,.district.rubble:hover .land,.district.rubble:focus .land{fill:#705039}
 
 .unit-icon.person{color:#ffffff}.unit-icon.police,.unit-icon.scientist{color:#69aaff}.unit-icon.tank,.unit-icon.soldier,.unit-icon.helicopter{color:#a0ad58}.unit-icon.monster{color:#ed4940}.unit-icon.kaiju{color:#ba8fd5}.district.rubble .land,.district.rubble.active .land,.district.rubble:hover .land,.district.rubble:focus .land{fill:#705039;stroke:#b69069}.district .damage-label{fill:#f7eedc}
+
+header{position:relative}#gameVersion{position:absolute;left:50%;transform:translateX(-50%);font:600 12px monospace;letter-spacing:1px;color:var(--acid)}@media(max-width:580px){header{padding-bottom:30px}#gameVersion{bottom:7px}}
