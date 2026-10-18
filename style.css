@@ -35,3 +35,7 @@ header{position:relative}#gameVersion{position:absolute;left:50%;transform:trans
 #leaderboardDialog{width:min(1100px,94vw);max-width:94vw;padding:28px;background:#17282b;color:#f2f0dc;border:1px solid #829271}#leaderboardDialog::backdrop{background:#071013df}.leaderboard-scroll{overflow-x:auto}.leaderboard-table{width:100%;border-collapse:collapse;white-space:nowrap;font-size:13px}.leaderboard-table th,.leaderboard-table td{padding:13px 11px;text-align:left;border-bottom:1px solid #43564f}.leaderboard-table th{color:#deed9b}#playerName{display:block;width:100%;padding:12px;margin-top:8px;border:1px solid #75866c;border-radius:4px;font:inherit}#leaderboardScope{font-size:13px;color:#b6c4ba}
 
 .burrow-control{grid-column:span 2;padding:8px;background:#777;border-radius:5px}.burrow-control[hidden]{display:none}#burrow{width:100%;font-weight:bold}#burrow.above-ground{background:#fff;color:#111;border-color:#ddd}#burrow.below-ground{background:#080808;color:#fff;border-color:#080808}
+
+.berserk-warning{position:fixed;top:75px;left:50%;transform:translateX(-50%);z-index:9999;padding:18px 30px;border:3px solid #ffdf6d;border-radius:8px;background:#ad251b;color:white;font:800 24px sans-serif;text-align:center;box-shadow:0 6px 30px #0009;pointer-events:none;animation:berserk-flash .55s steps(2,end) infinite}.berserk-warning[hidden]{display:none}@keyframes berserk-flash{50%{opacity:.3}}@media(prefers-reduced-motion:reduce){.berserk-warning{animation:none}}
+
+.meter i{min-width:2px}.meter{gap:2px}
