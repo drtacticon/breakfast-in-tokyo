@@ -1,5 +1,5 @@
 'use strict';
-const GAME_VERSION='1.12.0';
+const GAME_VERSION='1.13.0';
 const LEADERBOARD_URL='https://breakfast-in-tokyo-scores.validluck3.chatgpt.site/api/leaderboard';
 let scoreSyncPromise=null,pendingEntries=[];try{pendingEntries=JSON.parse(localStorage.getItem('tokyo-score-queue')||'[]');if(!Array.isArray(pendingEntries))pendingEntries=[];}catch{}
 const names=['Ikebukuro','Sugamo','Yanaka','Ueno','Asakusa','Mukojima','Waseda','Kagurazaka','Hongo','Okachimachi','Kuramae','Ryogoku','Shinjuku','Ichigaya','Kanda','Akihabara','Nihonbashi','Kinshicho','Yoyogi','Akasaka','Imperial Palace','Tokyo Station','Kayabacho','Monzennakacho','Harajuku','Roppongi','Hibiya','Ginza','Tsukiji','Kiba','Shibuya','Azabu','Shiba','Shiodome','Toyosu','Tokyo Bay','Otsuka','Komagome','Nippori','Minowa','Oshiage','Takadanobaba','Edogawabashi','Nezu','Sendagi','Hikifune','Nakano','Yotsuya','Koishikawa','Hamacho','Sumida','Ebisu','Hiroo','Toranomon','Shinbashi','Hatchobori','Daikanyama','Mita','Tamachi','Shinagawa','Ariake'];
