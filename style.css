@@ -51,3 +51,5 @@ header{position:relative}#gameVersion{position:absolute;left:50%;transform:trans
 #burrow.martian-flight{background:#2876bf;color:#fff;border-color:#89c8ff} .martians{filter:drop-shadow(0 0 3px #80dfc055)}
 
 #mpBurrow.martian-flight{background:#2876bf;color:white;border-color:#89c8ff}#mpBurrow.above-ground{background:#fff;color:#172d35}
+
+.baby-label{fill:#d1ef9a;font-size:9px;font-weight:800;paint-order:stroke;stroke:#203526;stroke-width:2px}.baby-groot{color:#98c85f}
