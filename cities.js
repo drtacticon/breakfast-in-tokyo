@@ -468,7 +468,7 @@ const CITY_MAPS={
       "Lake Pleasant",
       "Camino a Lago",
       "Skunk Creek Trail",
-      "Peoria High School",
+      "Sundance School Aztecs",
       "Old Town Fire House",
       "Peoria Elementary",
       "Oasis Park",
