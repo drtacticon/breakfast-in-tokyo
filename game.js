@@ -178,13 +178,13 @@ function hexNameLines(name,x){const lines=[];for(const word of name.split(' ')){
 let mapZoomed=false,mapFocus=21,mapRedraw=null;
 function configureMapView(pos,redraw){
  mapFocus=districts[pos]?pos:21;mapRedraw=redraw;const map=$('map'),d=districts[mapFocus];
- map.setAttribute?.('viewBox',mapZoomed?[d.x-190,d.y-185,380,370].join(' '):'-120 -100 1520 1260');
+ map.setAttribute?.('viewBox',mapZoomed?[d.x-430,d.y-395,860,790].join(' '):'-120 -100 1520 1260');
  map.classList?.toggle('map-zoomed',mapZoomed);
- const button=$('mapZoom');if(button){button.textContent=mapZoomed?'Zoom out':'Zoom in';button.setAttribute?.('aria-pressed',String(mapZoomed));button.setAttribute?.('aria-label',mapZoomed?'Zoom out to the full city':'Zoom in to the three-hex view centered on your monster');}
+ const button=$('mapZoom');if(button){button.textContent=mapZoomed?'Zoom out':'Zoom in';button.setAttribute?.('aria-pressed',String(mapZoomed));button.setAttribute?.('aria-label',mapZoomed?'Zoom out to the full city':'Zoom in to the seven-hex-wide view centered on your monster');}
 }
 function applyMapView(){
  if(!mapZoomed)return;const map=$('map'),focus=districts[mapFocus];
- const visible=districts.map((d,i)=>({...d,i})).filter(d=>Math.max(Math.abs(d.q-focus.q),Math.abs(d.r-focus.r),Math.abs(d.q+d.r-focus.q-focus.r))<=1);
+ const visible=districts.map((d,i)=>({...d,i})).filter(d=>Math.max(Math.abs(d.q-focus.q),Math.abs(d.r-focus.r),Math.abs(d.q+d.r-focus.q-focus.r))<=3);
  const paths=visible.map(d=>'<path d="'+Array.from({length:6},(_,n)=>{const a=(n*60-30)*Math.PI/180;return(n?'L':'M')+(d.x+68*Math.cos(a))+','+(d.y+68*Math.sin(a));}).join(' ')+'Z"/>').join('');
  map.innerHTML='<defs><clipPath id="map-closeup-clip">'+paths+'</clipPath></defs><g clip-path="url(#map-closeup-clip)">'+map.innerHTML+'</g>';
  const ids=new Set(visible.map(d=>d.i));map.querySelectorAll('[data-id],[data-mphex]').forEach(el=>{const id=Number(el.getAttribute('data-id')??el.getAttribute('data-mphex'));if(!ids.has(id)){el.setAttribute('tabindex','-1');el.setAttribute('aria-hidden','true');}});
@@ -194,7 +194,7 @@ function toggleMapZoom(){mapZoomed=!mapZoomed;if(mapRedraw)mapRedraw();}
 function damageDotLevel(percent){return Math.max(0,Math.min(100,Math.round(Number(percent)||0)));}
 function boardSurfaceEffects(damage,fire){
  const width=document.getElementById('map')?.getBoundingClientRect?.().width;
- const pixel=width>0?(mapZoomed?380:1520)/width:1,step=2*pixel;
+ const pixel=width>0?(mapZoomed?860:1520)/width:1,step=2*pixel;
  const levels=[...new Set(damage.map(damageDotLevel))].filter(n=>n>0);
  let out='<defs>';
  for(const level of levels){out+='<pattern id="rubble-dots-'+level+'" width="'+(step*10)+'" height="'+(step*10)+'" patternUnits="userSpaceOnUse">';for(let n=0;n<level;n++){const cell=n*37%100;out+='<rect x="'+(cell%10*step)+'" y="'+(Math.floor(cell/10)*step)+'" width="'+pixel+'" height="'+pixel+'" fill="#8e6546"/>';}out+='</pattern>';}

@@ -66,5 +66,5 @@ header{position:relative}#gameVersion{position:absolute;left:50%;transform:trans
 /* Clearer unit colors on satellite backgrounds, shared by the board and legend. */
 .unit-icon.soldier,.unit-icon.tank,.unit-icon.helicopter{color:#a4f26a}.unit-icon.scientist{color:#dc72ff}
 
-/* Local three-hex camera: 4x viewBox magnification in a 48%-width canvas gives 1.92x hex size. */
-.map-view-controls{display:flex;justify-content:flex-end;padding:10px 18px 0}.map-view-controls button{padding:7px 14px;font-size:12px}.map-view-controls button[aria-pressed="true"]{border-color:var(--acid);color:var(--acid)}#map.map-zoomed{display:block;width:48%;min-width:322px;max-width:none;margin:12px auto;aspect-ratio:380 / 370}.unit-icon.police{color:#63d9ff}.unit-icon.soldier,.unit-icon.tank,.unit-icon.helicopter{color:#b0ff59}
+/* Local seven-hex-diameter camera: radius three, 37 cells, about 1.77x overview hex size. */
+.map-view-controls{display:flex;justify-content:flex-end;padding:10px 18px 0}.map-view-controls button{padding:7px 14px;font-size:12px}.map-view-controls button[aria-pressed="true"]{border-color:var(--acid);color:var(--acid)}#map.map-zoomed{display:block;width:100%;min-width:670px;max-width:none;margin:12px auto;aspect-ratio:860 / 790}.unit-icon.police{color:#63d9ff}.unit-icon.soldier,.unit-icon.tank,.unit-icon.helicopter{color:#b0ff59}
