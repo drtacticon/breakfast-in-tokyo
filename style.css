@@ -62,3 +62,6 @@ header{position:relative}#gameVersion{position:absolute;left:50%;transform:trans
 
 /* Fire glows through the city detail; damage is drawn as pixel-sized rubble speckles. */
 #map .district.burning .land,#map .district.rubble .land{fill:#344b46;fill-opacity:.08}#map .rubble-dots{stroke:none;shape-rendering:crispEdges}#map .city-fire-glow{stroke:none}#map .district.burning .fire-badge{fill:#ffb5a5}#map .district.rubble .damage-label{fill:#eac4a3;font-size:8px}
+
+/* Clearer unit colors on satellite backgrounds, shared by the board and legend. */
+.unit-icon.soldier,.unit-icon.tank,.unit-icon.helicopter{color:#a4f26a}.unit-icon.scientist{color:#dc72ff}
