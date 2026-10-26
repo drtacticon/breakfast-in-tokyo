@@ -59,3 +59,6 @@ header{position:relative}#gameVersion{position:absolute;left:50%;transform:trans
 
 /* Subdued boundaries leave the dark satellite texture and unit markers in focus. */
 #map .district .land{stroke-width:.7;stroke-opacity:.35}#map .district.neighbor .land{stroke-width:1;stroke-opacity:.65}#map .district.active .land,#map .district:hover .land,#map .district:focus .land{stroke-width:1.5;stroke-opacity:.85}#map .district.burning .land,#map .district.rubble .land{stroke-width:.8;stroke-opacity:.5}
+
+/* Fire glows through the city detail; damage is drawn as pixel-sized rubble speckles. */
+#map .district.burning .land,#map .district.rubble .land{fill:#344b46;fill-opacity:.08}#map .rubble-dots{stroke:none;shape-rendering:crispEdges}#map .city-fire-glow{stroke:none}#map .district.burning .fire-badge{fill:#ffb5a5}#map .district.rubble .damage-label{fill:#eac4a3;font-size:8px}
