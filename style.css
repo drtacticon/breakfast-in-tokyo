@@ -56,3 +56,6 @@ header{position:relative}#gameVersion{position:absolute;left:50%;transform:trans
 
 /* Satellite texture is clipped to individual hexes; all game labels remain above it. */
 #map .district .land{fill-opacity:.18}#map .district.active .land,#map .district:hover .land,#map .district:focus .land{fill-opacity:.78}#map .district.burning .land,#map .district.rubble .land{fill-opacity:.85}.imagery-credit{font-size:11px;line-height:1.45;color:#b8c4bd;margin:6px 0 12px}.city-preview .imagery-credit{font-size:10px;opacity:1}
+
+/* Subdued boundaries leave the dark satellite texture and unit markers in focus. */
+#map .district .land{stroke-width:.7;stroke-opacity:.35}#map .district.neighbor .land{stroke-width:1;stroke-opacity:.65}#map .district.active .land,#map .district:hover .land,#map .district:focus .land{stroke-width:1.5;stroke-opacity:.85}#map .district.burning .land,#map .district.rubble .land{stroke-width:.8;stroke-opacity:.5}

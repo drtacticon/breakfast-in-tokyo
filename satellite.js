@@ -14,6 +14,6 @@ function satelliteLayer(cityId,scope='board',preview=false){
  const scale=12/70;
  const x=preview?110-760*scale:-120,y=preview?97.5-630*scale:-100,w=preview?1520*scale:1520,h=preview?1260*scale:1260;
  const paths=districts.map(d=>{const cx=preview?110+Math.sqrt(3)*12*(d.q+d.r/2):d.x,cy=preview?97.5+18*d.r:d.y,size=preview?11.3:68;return '<path d="'+Array.from({length:6},(_,i)=>{const a=(i*60-30)*Math.PI/180;return (i?'L':'M')+(cx+size*Math.cos(a))+','+(cy+size*Math.sin(a));}).join(' ')+'Z"/>';}).join('');
- return '<defs><clipPath id="'+clip+'">'+paths+'</clipPath><filter id="'+gray+'"><feColorMatrix type="saturate" values="0"/></filter></defs><g clip-path="url(#'+clip+')" pointer-events="none" aria-hidden="true"><image href="backgrounds/'+cityId+'.png" x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" preserveAspectRatio="xMidYMid slice" opacity="0.32" filter="url(#'+gray+')"/></g>';
+ return '<defs><clipPath id="'+clip+'">'+paths+'</clipPath><filter id="'+gray+'"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="linear" slope="0.7"/><feFuncG type="linear" slope="0.7"/><feFuncB type="linear" slope="0.7"/></feComponentTransfer></filter></defs><g clip-path="url(#'+clip+')" pointer-events="none" aria-hidden="true"><image href="backgrounds/'+cityId+'.png" x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" preserveAspectRatio="xMidYMid slice" opacity="0.32" filter="url(#'+gray+')"/></g>';
 }
 function satelliteCredit(cityId){return SATELLITE_MAPS[cityId]?.credit||'';}
