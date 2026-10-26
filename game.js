@@ -177,10 +177,10 @@ function boardSurfaceEffects(damage,fire){
  const width=document.getElementById('map')?.getBoundingClientRect?.().width;
  const pixel=width>0?1520/width:1,step=2*pixel;
  const levels=[...new Set(damage.map(damageDotLevel))].filter(n=>n>0);
- let out='<defs><radialGradient id="city-fire-glow"><stop offset="0" stop-color="#ff2818" stop-opacity=".8"/><stop offset=".6" stop-color="#ed160d" stop-opacity=".5"/><stop offset="1" stop-color="#b70909" stop-opacity=".08"/></radialGradient>';
+ let out='<defs>';
  for(const level of levels){out+='<pattern id="rubble-dots-'+level+'" width="'+(step*10)+'" height="'+(step*10)+'" patternUnits="userSpaceOnUse">';for(let n=0;n<level;n++){const cell=n*37%100;out+='<rect x="'+(cell%10*step)+'" y="'+(Math.floor(cell/10)*step)+'" width="'+pixel+'" height="'+pixel+'" fill="#8e6546"/>';}out+='</pattern>';}
- out+='</defs><g class="city-fire-glows" pointer-events="none" aria-hidden="true" style="mix-blend-mode:screen">';
- fire.forEach((burning,i)=>{if(!burning||damage[i]>=100||!districts[i])return;const d=districts[i];const points=Array.from({length:6},(_,n)=>{const a=(n*60-30)*Math.PI/180;return (d.x+68*Math.cos(a))+','+(d.y+68*Math.sin(a));}).join(' ');out+='<polygon class="city-fire-glow" points="'+points+'" fill="url(#city-fire-glow)"/>';});
+ out+='</defs><g class="city-fire-tints" pointer-events="none" aria-hidden="true" style="mix-blend-mode:multiply">';
+ fire.forEach((burning,i)=>{if(!burning||damage[i]>=100||!districts[i])return;const d=districts[i];const points=Array.from({length:6},(_,n)=>{const a=(n*60-30)*Math.PI/180;return (d.x+68*Math.cos(a))+','+(d.y+68*Math.sin(a));}).join(' ');out+='<polygon class="city-fire-tint" points="'+points+'" fill="#ffc0c0" stroke="none"/>';});
  return out+'</g>';
 }
 function damageDots(points,percent){const level=damageDotLevel(percent);return level?'<polygon class="rubble-dots" points="'+points+'" fill="url(#rubble-dots-'+level+')" pointer-events="none" aria-hidden="true"/>':'';}
