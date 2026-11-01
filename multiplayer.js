@@ -1,6 +1,6 @@
 /* Private rooms client. Room credentials and orders never enter the solo save. */
 (()=>{
-const API='https://breakfast-in-tokyo-scores.validluck3.chatgpt.site/api/rooms';
+const API='https://breakfast-in-tokyo-scores.tacticon11.chatgpt.site/api/rooms';
 const mp={active:false,room:null,token:'',code:'',plan:[],revision:0,round:0,timer:null,polling:false,busy:false,playing:false,snapshot:null,mode:'move',error:'',sessionKey:'tokyo-room-session'};
 const solo={render,draw,selectDistrict,queueAutoBerserk};
 const node=id=>document.getElementById(id),text=(id,t)=>node(id).textContent=t;
